@@ -2,7 +2,7 @@ export const navBarData = [
   {
     id: 1,
     title: "Despre noi",
-    link: "#aboutUs",
+    link: "#about-us",
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ export const navBarData = [
   {
     id: 4,
     title: "Implică-te",
-    link: "#getInvolved",
+    link: "#get-involved",
   },
   {
     id: 5,
