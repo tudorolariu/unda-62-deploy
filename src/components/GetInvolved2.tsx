@@ -105,7 +105,7 @@ const GetInvolved2 = () => {
   };
 
   return (
-    <div id="getInvolved">
+    <div id="get-involved">
       {/* Implica-te */}
       <div
         className="flex flex-col h-auto w-screen-2xl pt-14 max-md:px-4

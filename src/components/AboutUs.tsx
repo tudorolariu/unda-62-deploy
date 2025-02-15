@@ -8,7 +8,7 @@ import Image from "next/image";
 
 const AboutUs = () => {
   return (
-    <div id="aboutUs">
+    <div id="about-us">
       <div className="w-screen h-2 bg-cyan-dark"></div>
       {/* Cine suntem */}
       <div className="flex w-screen-2xl h-auto pt-14 max-md:px-4 items-center bg-white">
