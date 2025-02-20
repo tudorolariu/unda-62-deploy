@@ -18,10 +18,10 @@ export const metadata: Metadata = {
   description:
     "UNDA 62 este un centru de tineret din Cluj-Napoca, un spațiu creat de tineri, pentru tineri. Oferim activități gratuite, un mediu sigur și primitor, unde poți învăța, socializa și da viață ideilor tale.",
   openGraph: {
-    url: "https://unda62.tudorolariu.com",
+    url: "https://unda62.com",
     images: [
       {
-        url: "https://unda62.tudorolariu.com/opengraph-image.jpg",
+        url: "https://unda62.com/opengraph-image.jpg",
         width: 1200,
         height: 630,
         alt: "Unda 62",
