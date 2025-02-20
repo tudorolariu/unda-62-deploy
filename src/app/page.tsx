@@ -4,7 +4,6 @@ import AboutUs from "@/components/AboutUs";
 import Calendar from "@/components/Calendar";
 import Donate from "@/components/Donate";
 import GetInvolved from "@/components/GetInvolved";
-import GetInvolved2 from "@/components/GetInvolved2";
 import Contact from "@/components/Contact";
 
 export default function Home() {
@@ -16,8 +15,7 @@ export default function Home() {
         <AboutUs />
         <Calendar />
         <Donate />
-        {/* <GetInvolved /> */}
-        <GetInvolved2 />
+        <GetInvolved />
         <Contact />
       </div>
     </>

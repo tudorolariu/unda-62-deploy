@@ -33,7 +33,7 @@ const Contact = () => {
               </li>
               <li className="flex flex-row items-center gap-3">
                 <IoMdMail className="text-2xl" />
-                <p className="text-md">unda62@gmail.com</p>
+                <p className="text-md">contact@unda62.com</p>
               </li>
               <li className="flex flex-row items-center gap-3">
                 <FaPhone className="text-2xl" />
@@ -45,6 +45,7 @@ const Contact = () => {
               <li className="flex flex-row">
                 <a
                   href="https://www.instagram.com/unda_62/"
+                  target="_blank"
                   className="hover:text-cyan"
                 >
                   <AiFillInstagram />
@@ -53,13 +54,18 @@ const Contact = () => {
               <li className="flex flex-row">
                 <a
                   href="https://www.facebook.com/p/Unda-62-61552672377000/"
+                  target="_blank"
                   className="hover:text-cyan"
                 >
                   <AiFillFacebook />
                 </a>
               </li>
               <li className="flex flex-row">
-                <a href="#contact" className="hover:text-cyan hover">
+                <a
+                  href="https://www.tiktok.com/@unda_62?_t=ZN-8u2iYZdo6jO&_r=1"
+                  target="_blank"
+                  className="hover:text-cyan hover"
+                >
                   <AiFillTikTok />
                 </a>
               </li>
@@ -75,7 +81,7 @@ const Contact = () => {
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2731.827679458789!2d23.6233893!3d46.787999799999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47490d312a53197d%3A0x2286edc36280deda!2sUNDA%2062!5e0!3m2!1sro!2sro!4v1732443236421!5m2!1sro!2sro"
               className="w-[57vw] max-md:w-[93vw] h-[40vh] md:h-[60vh] m-auto 
-              border-4 border-cyan-dark rounded-xl shadow-2xl"
+              border-4 border-cyan-dark rounded-xl shadow-xl md:shadow-2xl"
             />
           </motion.div>
         </div>
