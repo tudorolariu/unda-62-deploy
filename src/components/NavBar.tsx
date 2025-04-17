@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import logo from "../assets/logo.jpg";
+import logo from "../assets/logo.webp";
 import { navBarData } from "@/utils/navBarData";
 import { MdMenu } from "react-icons/md";
 import {
@@ -50,16 +50,26 @@ const NavBar = () => {
         drop-shadow-lg"
     >
       {/* Logo */}
-      <a href="#home">
+      <a
+        href="#home"
+        className="flex items-center cursor-pointer hover:text-yellow"
+      >
         <Image alt="logo" src={logo} className="w-16 rounded-full" />
+        <p className="px-3 font-semibold text-xl lg:text-lg">Acasă</p>
       </a>
 
       {/* NavBar menu */}
       <ul className="hidden md:flex items-center font-semibold text-lg">
         {navBarData.map((item) => {
+          const isHighlighted = item.id === 3 || item.id === 4;
           return (
-            <li className="mx-5" key={item.id}>
-              <a href={item.link} className="hover:text-yellow">
+            <li key={item.id}>
+              <a
+                href={item.link}
+                className={`mx-2 px-3 py-2 hover:text-yellow rounded-xl ${
+                  isHighlighted ? "bg-cyan" : ""
+                }`}
+              >
                 {item.title}
               </a>
             </li>
@@ -82,15 +92,18 @@ const NavBar = () => {
             transition={{ duration: 0.3 }}
             className="absolute top-[14vh] left-0 w-screen h-screen z-10"
           >
-            <div className="text-xl font-semibold bg-cyan-dark py-10 m-7 rounded-3xl">
+            <div className="text-xl font-semibold bg-cyan-dark py-10 m-7 z-10 rounded-3xl">
               <ul className="flex flex-col justify-center items-center gap-5">
                 {navBarData.map((item) => {
+                  const isHighlighted = item.id === 3 || item.id === 4;
                   return (
                     <li key={item.id}>
                       <a
                         href={item.link}
                         onClick={handleShowSideBar}
-                        className="hover:text-yellow"
+                        className={`my-1 px-2 py-1 hover:text-yellow rounded-xl ${
+                          isHighlighted ? "bg-cyan" : ""
+                        }`}
                       >
                         {item.title}
                       </a>

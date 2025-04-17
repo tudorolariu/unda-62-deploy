@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import logo from "../assets/logo.jpg";
+import logo from "../assets/logo.webp";
 import { fadeIn } from "@/utils/fadeInEffect";
 import { FaLocationDot } from "react-icons/fa6";
 import { IoMdMail } from "react-icons/io";
@@ -13,7 +13,7 @@ const Contact = () => {
   return (
     <div id="contact">
       {/* Contact */}
-      <div className="flex flex-col w-screen-2xl h-auto py-14 max-md:px-4 items-center bg-white">
+      <div className="flex flex-col w-screen-2xl h-auto pb-14 pt-14 lg:pt-20 max-md:px-4 items-center">
         <div className="md:w-11/12 flex flex-col md:flex-row justify-between items-center gap-12 max-md:gap-6">
           <motion.div
             // variants={fadeIn("right", 5)}
@@ -102,19 +102,19 @@ const Contact = () => {
               Transport public:
             </p>
             <p className="w-full mb-2 text-md text-black text-justify">
-              ● Din P-ța Mihai Viteazu (stația Florin Piersic): cu liniile 36B
-              sau 36L
+              ● <b>Din P-ța Mihai Viteazu (stația Florin Piersic):</b> cu
+              liniile <b>36B</b> sau <b>36L</b>
             </p>
             <p className="w-full text-md text-black text-justify">
-              ● Din centru (Memo):
+              ● <b>Din centru (Memo):</b>
             </p>
             <p className="w-full pl-5 text-md text-black text-justify">
-              ○ Liniile 52 (în timpul săptămânii) sau 14 (până la Bobâlnei Vest,
-              apoi mergi pe jos ~9 minute.
+              ○ Liniile <b>52</b> (în timpul săptămânii) sau <b>14</b> (până la{" "}
+              <b>Bobâlnei Vest</b>, apoi mergi pe jos ~9 minute).
             </p>
             <p className="w-full pl-5 mb-5 text-md text-black text-justify">
-              ○ Liniile 46B, 30, 6, 7 până la Siretului, de unde mai mergi ~14
-              minute pe jos.
+              ○ Liniile <b>46B</b>, <b>30</b>, <b>6</b>, <b>7</b> până la{" "}
+              <b>Siretului</b>, de unde mai mergi ~14 minute pe jos.
             </p>
           </div>
 
@@ -138,8 +138,8 @@ const Contact = () => {
               2. Intră în prima curte pe stânga.
             </p>
             <p className="w-full pl-5 mb-2 text-md text-black text-justify">
-              3. Apoi, intră în clădirea principală din curte, urcă la etajul 2,
-              și ne găsești acolo!
+              3. Apoi, intră în clădirea principală din curte, urcă la{" "}
+              <b>etajul 2</b>, și ne găsești acolo!
             </p>
             <p className="w-full text-md text-black text-justify">
               Te așteptăm cu drag! 😊

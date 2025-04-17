@@ -1,5 +1,5 @@
 import Image from "next/image";
-import heroBanner from "../assets/heroBanner.jpg";
+import heroBanner from "../assets/heroBanner.webp";
 
 const Hero = () => {
   return (
