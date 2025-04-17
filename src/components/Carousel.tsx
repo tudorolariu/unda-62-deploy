@@ -2,10 +2,10 @@
 
 import { useEffect, useState } from "react";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
-import ceFacem1 from "../assets/ceFacem1.jpg";
-import ceFacem2 from "../assets/ceFacem2.jpg";
-import ceFacem3 from "../assets/ceFacem3.jpg";
-import ceFacem4 from "../assets/ceFacem4.jpg";
+import ceFacem1 from "../assets/ceFacem1.webp";
+import ceFacem2 from "../assets/ceFacem2.webp";
+import ceFacem3 from "../assets/ceFacem3.webp";
+import ceFacem4 from "../assets/ceFacem4.webp";
 import Image from "next/image";
 
 const carouselSlides = [ceFacem1, ceFacem2, ceFacem3, ceFacem4];

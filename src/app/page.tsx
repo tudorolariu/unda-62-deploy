@@ -5,11 +5,12 @@ import Calendar from "@/components/Calendar";
 import Donate from "@/components/Donate";
 import GetInvolved from "@/components/GetInvolved";
 import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
     <>
-      <div className="w-screen h-screen overflow-x-hidden scroll-smooth font-body font-medium">
+      <div className="w-screen h-screen overflow-x-hidden scroll-smooth font-body font-medium bg-white">
         <NavBar />
         <Hero />
         <AboutUs />
@@ -17,6 +18,7 @@ export default function Home() {
         <Donate />
         <GetInvolved />
         <Contact />
+        <Footer />
       </div>
     </>
   );
