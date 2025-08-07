@@ -1,8 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import logo from "../assets/logo.webp";
-import { navBarData } from "@/utils/navBarData";
+import Image from "next/image";
+import { useEffect, useRef, useState, RefObject } from "react";
 import { MdMenu } from "react-icons/md";
 import {
   motion,
@@ -10,44 +9,72 @@ import {
   useMotionValueEvent,
   AnimatePresence,
 } from "framer-motion";
-import Image from "next/image";
+import { navBarData } from "@/utils/navBarData";
+import logo from "@/assets/logo.webp";
 
-const NavBar = () => {
-  const { scrollY } = useScroll();
-  // const [hideNavBar, setHideNavBar] = useState(false);
-  const [showSideBar, setShowSideBar] = useState(false);
+interface NavBarProps {
+  scrollRef: RefObject<HTMLDivElement | null>;
+}
 
-  // useMotionValueEvent(scrollY, "change", (latestScrollValue: any) => {
-  //   const previousScrollValue: any = scrollY.getPrevious();
-  //   if (latestScrollValue > previousScrollValue) {
-  //     setHideNavBar(true);
-  //   } else {
-  //     setHideNavBar(false);
-  //   }
-  // });
+const NavBar: React.FC<NavBarProps> = ({ scrollRef }) => {
+  const { scrollY } = useScroll({ container: scrollRef, layoutEffect: false });
+  const [hiddenNavBar, setHiddenNavBar] = useState(false);
+  const [showMobileNavMenu, setShowMobileNavMenu] = useState(false);
+  const mobileNavMenuRef = useRef<HTMLDivElement>(null);
 
-  const handleShowSideBar = () => {
-    setShowSideBar(!showSideBar);
-    if (!showSideBar) {
-      document.body.style.overflow = "hidden";
+  useMotionValueEvent(scrollY, "change", (latestScrollValue: number) => {
+    const previousScrollValue: number = scrollY.getPrevious() ?? 0;
+    if (latestScrollValue > previousScrollValue && latestScrollValue > 150) {
+      setHiddenNavBar(true);
     } else {
-      document.body.style.overflow = "scroll";
+      setHiddenNavBar(false);
     }
+  });
+
+  const handleShowMobileNavMenu = () => {
+    setShowMobileNavMenu((prev) => !prev);
   };
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (!mobileNavMenuRef.current?.contains(e.target as Node)) {
+        setShowMobileNavMenu(false);
+      }
+    };
+
+    if (showMobileNavMenu) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [showMobileNavMenu]);
+
+  useEffect(() => {
+    const scrollElement = scrollRef.current;
+
+    if (showMobileNavMenu && scrollElement) {
+      scrollElement.style.overflow = "hidden";
+    } else if (scrollElement) {
+      scrollElement.style.overflow = "";
+    }
+
+    return () => {
+      if (scrollElement) scrollElement.style.overflow = "";
+    };
+  }, [showMobileNavMenu, scrollRef]);
 
   return (
     <motion.div
-      // variants={{
-      //   visible: { y: 0 },
-      //   hidden: { y: "-100%" },
-      // }}
-      // animate={hideNavBar ? "hidden" : "visible"}
-      // transition={{ duration: 0.35, ease: "easeInOut" }}
-
-      // Change VVV absolute with sticky
-      className="fixed flex justify-between max-md:h-[12vh] w-screen
-        items-center bg-cyan-dark text-white py-2 px-5 z-10
-        drop-shadow-lg"
+      variants={{
+        visible: { y: 0 },
+        hidden: { y: "-100%" },
+      }}
+      animate={hiddenNavBar ? "hidden" : "visible"}
+      transition={{ duration: 0.35, ease: "easeInOut" }}
+      className="sticky top-0 w-full flex justify-between items-center
+            bg-cyan-dark text-white py-2 px-5 z-50 drop-shadow-lg"
     >
       {/* Logo */}
       <a
@@ -58,7 +85,7 @@ const NavBar = () => {
         <p className="px-3 font-semibold text-xl lg:text-lg">Acasă</p>
       </a>
 
-      {/* NavBar menu */}
+      {/* NavBar list */}
       <ul className="hidden md:flex items-center font-semibold text-lg">
         {navBarData.map((item) => {
           const isHighlighted = item.id === 3 || item.id === 4;
@@ -77,22 +104,31 @@ const NavBar = () => {
         })}
       </ul>
 
-      {/*  Mobile menu button  */}
-      <div className="md:hidden cursor-pointer" onClick={handleShowSideBar}>
+      {/*  Mobile Menu button  */}
+      <div
+        className="md:hidden cursor-pointer"
+        onMouseDown={(e) => {
+          e.stopPropagation();
+          handleShowMobileNavMenu();
+        }}
+      >
         <MdMenu className="text-4xl hover:text-yellow" />
       </div>
 
-      {/*  Mobile Nav Bar  */}
+      {/*  Mobile NavMenu  */}
       <AnimatePresence mode="wait">
-        {showSideBar && (
+        {showMobileNavMenu && (
           <motion.div
             initial={{ opacity: 0, y: -100 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -100 }}
             transition={{ duration: 0.3 }}
-            className="absolute top-[14vh] left-0 w-screen h-screen z-10"
+            className="absolute top-[14vh] left-0 w-full h-screen z-10"
           >
-            <div className="text-xl font-semibold bg-cyan-dark py-10 m-7 z-10 rounded-3xl">
+            <div
+              ref={mobileNavMenuRef}
+              className="text-xl font-semibold bg-cyan-dark py-10 m-7 z-10 rounded-3xl"
+            >
               <ul className="flex flex-col justify-center items-center gap-5">
                 {navBarData.map((item) => {
                   const isHighlighted = item.id === 3 || item.id === 4;
@@ -100,7 +136,7 @@ const NavBar = () => {
                     <li key={item.id}>
                       <a
                         href={item.link}
-                        onClick={handleShowSideBar}
+                        onClick={handleShowMobileNavMenu}
                         className={`my-1 px-2 py-1 hover:text-yellow rounded-xl ${
                           isHighlighted ? "bg-cyan" : ""
                         }`}

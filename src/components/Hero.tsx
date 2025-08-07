@@ -1,14 +1,15 @@
 import Image from "next/image";
-import heroBanner from "../assets/heroBanner.webp";
+import heroBanner from "@/assets/heroBanner.webp";
 
 const Hero = () => {
   return (
     <>
-      <div id="home" className="w-screen h-screen">
+      <div id="home" className="relative w-full h-[100svh]">
         <Image
           alt="hero-banner"
           src={heroBanner}
-          className="top-0 left-0 w-screen h-screen object-cover max-md:pt-[12vh]"
+          className="absolute top-0 left-0 w-full h-full object-cover"
+          priority
           // max-md:pt-[12vh]
         />
       </div>
