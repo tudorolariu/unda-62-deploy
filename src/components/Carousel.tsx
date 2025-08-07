@@ -1,16 +1,16 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
-import ceFacem1 from "../assets/ceFacem1.webp";
-import ceFacem2 from "../assets/ceFacem2.webp";
-import ceFacem3 from "../assets/ceFacem3.webp";
-import ceFacem4 from "../assets/ceFacem4.webp";
-import Image from "next/image";
+import ceFacem1 from "@/assets/ceFacem1.webp";
+import ceFacem2 from "@/assets/ceFacem2.webp";
+import ceFacem3 from "@/assets/ceFacem3.webp";
+import ceFacem4 from "@/assets/ceFacem4.webp";
 
 const carouselSlides = [ceFacem1, ceFacem2, ceFacem3, ceFacem4];
 
-const Carousel = ({ autoSlide = false, autoSlideInterval = 3000 }) => {
+const Carousel = ({ autoSlide = false, autoSlideInterval = 5000 }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const previousSlide = () => {
@@ -25,11 +25,11 @@ const Carousel = ({ autoSlide = false, autoSlideInterval = 3000 }) => {
     );
   };
 
-  // useEffect(() => {
-  //   if (!autoSlide) return;
-  //   const slideInterval = setInterval(nextSlide, autoSlideInterval);
-  //   return () => clearInterval(slideInterval);
-  // }, []);
+  useEffect(() => {
+    if (!autoSlide) return;
+    const slideInterval = setInterval(nextSlide, autoSlideInterval);
+    return () => clearInterval(slideInterval);
+  }, []);
 
   return (
     <div className="max-w-3xl h-100 rounded-xl overflow-hidden relative">

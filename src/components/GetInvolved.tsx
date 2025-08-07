@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import getInvolvedBackground from "../assets/getInvolvedBackground.jpg";
+import { motion } from "framer-motion";
+import { fadeIn } from "@/utils/fadeInEffect";
+import getInvolvedBackground from "@/assets/getInvolvedBackground.jpg";
 
 const GetInvolved = () => {
   const [activeTab, setActiveTab] = useState("tab1");
@@ -110,17 +112,25 @@ const GetInvolved = () => {
   return (
     <div id="get-involved">
       {/* Implica-te */}
-      <div
-        className="flex flex-col h-auto w-screen-2xl pt-14 max-md:px-4
+      <motion.div
+        variants={fadeIn("up")}
+        initial="hidden"
+        whileInView={"shown"}
+        viewport={{ once: true, amount: 0.45 }}
+        className="flex flex-col h-auto w-full-2xl pt-14 max-md:px-4
       justify-center items-center"
       >
-        <h2 className="text-4xl max-md:text-3xl text-black font-semibold mb-8 max-md:mb-4">
+        <h2 className="max-md:hidden text-4xl max-md:text-3xl text-black font-semibold mb-8 max-md:mb-4">
+          Cum te poți implica?
+        </h2>
+
+        <h2 className="md:hidden w-full text-left text-4xl max-md:text-3xl text-black font-semibold mb-8 max-md:mb-4">
           Cum te poți implica?
         </h2>
 
         <div
-          className="w-11/12 max-md:w-full h-auto lg:h-[450px] border-4 border-cyan-dark rounded-xl
-           bg-white px-3 md:px-14 py-3 md:py-10 shadow-xl md:shadow-2xl space-y-5"
+          className="w-11/12 max-md:w-full min-h-[300px] lg:h-[450px] border-4 border-cyan-dark rounded-xl
+           px-3 md:px-14 py-3 md:py-10 shadow-xl md:shadow-2xl space-y-5 bg-white"
         >
           <div className="grid grid-flow-col justify border-b-2 border-black">
             {tabs.map((tab) => (
@@ -140,7 +150,7 @@ const GetInvolved = () => {
 
           <div>{tabContent[activeTab]}</div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

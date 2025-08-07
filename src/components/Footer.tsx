@@ -1,10 +1,10 @@
 import Image from "next/image";
-import logoTO from "../assets/logoTO.webp";
+import logoTO from "@/assets/logoTO.webp";
 
 const Footer = () => {
   return (
     <div
-      className="flex justify-between lg:justify-center w-screen
+      className="flex justify-between lg:justify-center w-full
         items-center bg-cyan-dark text-white text-center font-semibold text-md p-2 z-10"
     >
       <p className="lg:pr-2">Website crafted by</p>
