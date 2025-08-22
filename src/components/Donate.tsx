@@ -23,7 +23,7 @@ const Donate = () => {
             <iframe
               id="galatom-form"
               src="https://pay.galantom.ro/widgets/donation_forms/view?id=147"
-              className="w-full max-md:h-[1630px] lg:h-[1321px]
+              className="w-full h-[1321px]
             border-4 border-cyan-dark rounded-xl shadow-xl md:shadow-2xl"
             ></iframe>
           </motion.div>
@@ -42,7 +42,7 @@ const Donate = () => {
             <iframe
               id="galatom-form"
               src="https://pay.galantom.ro/widgets/donation_forms/view?id=147"
-              className="w-full max-md:h-[1630px] lg:h-[1321px]
+              className="w-full h-[1650px]
             border-4 border-cyan-dark rounded-xl shadow-xl md:shadow-2xl"
             ></iframe>
           </motion.div>
