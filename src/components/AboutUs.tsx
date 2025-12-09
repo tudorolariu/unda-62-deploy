@@ -88,24 +88,37 @@ const AboutUs = () => {
               <h2 className="text-4xl max-md:text-3xl text-black font-semibold mb-4 mp:w-4/5">
                 Ce facem?
               </h2>
+
               <p className="w-full mb-2 text-md text-black text-justify">
                 La UNDA 62, te ajutăm să descoperi și să dezvolți abilități
                 importante pentru viața de zi cu zi:
               </p>
-              <p className="w-full text-md text-black text-justify">
-                ● <b>Autocunoaștere:</b> să afli ce contează pentru tine, să-ți
-                descoperi punctele forte și resursele.
-              </p>
-              <p className="w-full text-md text-black text-justify">
-                ● <b>Abilități sociale:</b> încredere, curaj și cum să comunici
-                ușor cu cei din jur.
-              </p>
-              <p className="w-full text-md text-black text-justify">
-                ● <b>Gestionarea vieții:</b> de la cum să-ți organizezi
-                programul, și la cum să faci alegeri sănătoase, până la cum să
-                te descurci cu problemele neașteptate sau să găsești ajutor
-                atunci când ai nevoie.
-              </p>
+
+              <div className="flex gap-1 text-md text-black items-start">
+                <span>●</span>
+                <p className="w-full text-justify">
+                  <b>Autocunoaștere:</b> să afli ce contează pentru tine, să-ți
+                  descoperi punctele forte și resursele.
+                </p>
+              </div>
+
+              <div className="flex gap-1 text-md text-black items-start">
+                <span>●</span>
+                <p className="w-full text-justify">
+                  <b>Abilități sociale:</b> încredere, curaj și cum să comunici
+                  ușor cu cei din jur.
+                </p>
+              </div>
+
+              <div className="flex gap-1 text-md text-black items-start">
+                <span>●</span>
+                <p className="w-full text-justify">
+                  <b>Gestionarea vieții:</b> de la cum să-ți organizezi
+                  programul, și la cum să faci alegeri sănătoase, până la cum să
+                  te descurci cu problemele neașteptate sau să găsești ajutor
+                  atunci când ai nevoie.
+                </p>
+              </div>
             </motion.div>
           </div>
           <p className="w-full mt-6 max-md:mt-2 mb-2 text-md text-black text-justify">

@@ -29,7 +29,7 @@ const Contact = () => {
             <ul className="w-full h-full flex flex-col gap-6 justify-between text-black text-justify">
               <li className="flex flex-row items-center gap-3">
                 <FaLocationDot className="text-2xl" />
-                <p className="text-md">Strada Câmpina 62, Cluj-Napoca</p>
+                <p className="text-md">Strada Câmpina 64, Cluj-Napoca</p>
               </li>
               <a href="mailto:contact@unda62.com">
                 <li className="flex flex-row items-center gap-3 hover:text-cyan">
@@ -106,21 +106,37 @@ const Contact = () => {
               <p className="w-full md:pt-7 mb-2 text-md text-black text-justify font-bold">
                 Transport public:
               </p>
-              <p className="w-full mb-2 text-md text-black text-justify">
-                ● <b>Din P-ța Mihai Viteazu (stația Florin Piersic):</b> cu
-                liniile <b>36B</b> sau <b>36L</b>
-              </p>
-              <p className="w-full text-md text-black text-justify">
-                ● <b>Din centru (Memo):</b>
-              </p>
-              <p className="w-full pl-5 text-md text-black text-justify">
-                ○ Liniile <b>52</b> (în timpul săptămânii) sau <b>14</b> (până
-                la <b>Bobâlnei Vest</b>, apoi mergi pe jos ~9 minute).
-              </p>
-              <p className="w-full pl-5 mb-5 text-md text-black text-justify">
-                ○ Liniile <b>46B</b>, <b>30</b>, <b>6</b>, <b>7</b> până la{" "}
-                <b>Siretului</b>, de unde mai mergi ~14 minute pe jos.
-              </p>
+
+              <div className="flex gap-1 text-md text-black items-start">
+                <span>●</span>
+                <p className="w-full text-justify">
+                  <b>Din P-ța Mihai Viteazu (stația Florin Piersic):</b> cu
+                  liniile <b>36B</b> sau <b>36L</b>
+                </p>
+              </div>
+
+              <div className="flex gap-1 text-md text-black items-start">
+                <span>●</span>
+                <p className="w-full text-justify">
+                  <b>Din centru (Memo):</b>
+                </p>
+              </div>
+
+              <div className="flex gap-1 pl-5 text-md text-black items-start">
+                <span>○</span>
+                <p className="w-full text-justify">
+                  Liniile <b>52</b> (în timpul săptămânii) sau <b>14</b> (până
+                  la <b>Bobâlnei Vest</b>, apoi mergi pe jos ~9 minute).
+                </p>
+              </div>
+
+              <div className="flex gap-1 pl-5 text-md text-black items-start">
+                <span>○</span>
+                <p className="w-full text-justify">
+                  Liniile <b>46B</b>, <b>30</b>, <b>6</b>, <b>7</b> până la{" "}
+                  <b>Siretului</b>, de unde mai mergi ~14 minute pe jos.
+                </p>
+              </div>
             </div>
 
             <Image
@@ -131,21 +147,32 @@ const Contact = () => {
 
             <div className="md:w-[25vw]">
               <p className="w-full mb-2 text-md text-black text-justify font-bold">
-                Cum intri în clădire:
+                Cum ajungi la clădire:
               </p>
-              <p className="w-full text-md text-black text-justify">
-                Intrarea se face din curtea interioară:
-              </p>
-              <p className="w-full pl-5 text-md text-black text-justify">
-                1. Treci pe lângă clădire pe străduța de lângă spălătoria auto.
-              </p>
-              <p className="w-full pl-5 text-md text-black text-justify">
-                2. Intră în prima curte pe stânga.
-              </p>
-              <p className="w-full pl-5 mb-2 text-md text-black text-justify">
-                3. Apoi, intră în clădirea principală din curte, urcă la{" "}
-                <b>etajul 2</b>, și ne găsești acolo!
-              </p>
+
+              <div className="flex gap-2 pl-5 text-md text-black items-start">
+                <span>1.</span>
+                <p className="w-full text-justify">
+                  Intri pe străduța de lângă spălătoria auto.
+                </p>
+              </div>
+
+              <div className="flex gap-1 pl-5 text-md text-black items-start">
+                <span>2.</span>
+                <p className="w-full text-justify">
+                  Vii în spate până la clădirea alb-gri (vis-a-vis de Fabrica de
+                  Jucării), intri pe ușa mare de sticlă
+                </p>
+              </div>
+
+              <div className="flex gap-1 pl-5 mb-2 text-md text-black items-start">
+                <span>3.</span>
+                <p className="w-full text-justify">
+                  Urci la <b>etajul 2</b>, vii în partea stângă și ne găsești
+                  acolo!
+                </p>
+              </div>
+
               <p className="w-full text-md text-black text-justify">
                 Te așteptăm cu drag! 😊
               </p>
