@@ -82,8 +82,8 @@ const AboutUs = () => {
               variants={fadeIn("left")}
               initial="hidden"
               whileInView={"shown"}
-              viewport={{ once: true, amount: 0.7 }}
-              className="md:w-5/12"
+              viewport={{ once: true, amount: 0.65 }}
+              className="md:w-[45%]"
             >
               <h2 className="text-4xl max-md:text-3xl text-black font-semibold mb-4 mp:w-4/5">
                 Ce facem?

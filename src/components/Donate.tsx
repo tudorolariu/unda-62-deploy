@@ -54,7 +54,7 @@ const Donate = () => {
             variants={fadeIn("left")}
             initial="hidden"
             whileInView={"shown"}
-            viewport={{ once: true, amount: 0.35 }}
+            viewport={{ once: true, amount: 0.33 }}
             className="max-md:hidden w-full md:w-3/5"
           >
             <div className="w-full flex flex-col">
