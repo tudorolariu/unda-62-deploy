@@ -20,6 +20,9 @@ export default {
         white: "#fbf6ed",
       },
       scrollBehavior: ["smooth"],
+      screens: {
+        ultrawide: "1920px",
+      },
     },
     fontFamily: {
       body: ["Quicksand"],

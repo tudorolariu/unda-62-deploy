@@ -16,7 +16,7 @@ const Footer = () => {
         <Image alt="logo" src={logoTO} className="w-11 lg:w-10 rounded-full" />
         <p className="pl-2">Tudor Olariu</p>
       </a>
-      <p className="pl-20">Copyright © 2025, UNDA 62</p>
+      <p className="pl-20">Copyright © {new Date().getFullYear()}, UNDA 62</p>
     </div>
   );
 };

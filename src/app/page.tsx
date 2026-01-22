@@ -32,7 +32,7 @@ export default function Home() {
         ref={scrollRef}
         className={`${
           isOverflowYHidden ? "overflow-y-hidden" : "overflow-y-auto"
-        } w-full max-w-[1920px] h-[100svh] overflow-x-hidden scroll-smooth font-body 
+        } w-full ultrawide:max-w-[1440px] h-[100svh] overflow-x-hidden scroll-smooth font-body 
         font-medium bg-white scrollbar scrollbar-thumb-cyan scrollbar-track-cyan-dark`}
       >
         <NavBar

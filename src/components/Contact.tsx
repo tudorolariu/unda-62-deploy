@@ -20,7 +20,7 @@ const Contact = () => {
             initial="hidden"
             whileInView={"shown"}
             viewport={{ once: true, amount: 0.6 }}
-            className="w-full min-w-fit flex flex-col gap-20 max-md:gap-6"
+            className="w-1/3 max-md:w-full min-w-fit flex flex-col gap-20 max-md:gap-6"
           >
             <h2 className="text-4xl max-md:text-3xl text-black font-semibold">
               Contact
@@ -80,11 +80,12 @@ const Contact = () => {
             variants={fadeIn("left")}
             initial="hidden"
             whileInView={"shown"}
-            viewport={{ once: true, amount: 0.6 }}
+            viewport={{ once: true, amount: 0.58 }}
+            className="w-[63%] max-md:w-full"
           >
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2731.827679458789!2d23.6233893!3d46.787999799999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47490d312a53197d%3A0x2286edc36280deda!2sUNDA%2062!5e0!3m2!1sro!2sro!4v1732443236421!5m2!1sro!2sro"
-              className="w-[57vw] max-md:w-[93vw] h-[40vh] md:h-[60vh] m-auto 
+              className="w-[100%] max-md:w-[93vw] h-[40vh] md:h-[60vh] m-auto 
               border-4 border-cyan-dark rounded-xl shadow-xl md:shadow-2xl"
             />
           </motion.div>
@@ -102,7 +103,7 @@ const Contact = () => {
           </h2>
 
           <div className="flex flex-col md:flex-row justify-between items-center gap-3 max-md:gap-2">
-            <div className="md:w-[25vw] flex flex-col">
+            <div className="md:w-[28%] flex flex-col">
               <p className="w-full md:pt-7 mb-2 text-md text-black text-justify font-bold">
                 Transport public:
               </p>
@@ -142,10 +143,10 @@ const Contact = () => {
             <Image
               alt="logo"
               src={logo}
-              className="w-[25vw] rounded-full max-md:hidden"
+              className="w-[28%] rounded-full max-md:hidden"
             />
 
-            <div className="md:w-[25vw]">
+            <div className="md:w-[28%]">
               <p className="w-full mb-2 text-md text-black text-justify font-bold">
                 Cum ajungi la clădire:
               </p>
