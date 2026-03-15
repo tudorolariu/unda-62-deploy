@@ -12,6 +12,7 @@ const Donate = dynamic(() => import("@/components/Donate"), { ssr: false });
 const GetInvolved = dynamic(() => import("@/components/GetInvolved"), {
   ssr: false,
 });
+const Projects = dynamic(() => import("@/components/Projects"), { ssr: false });
 const Contact = dynamic(() => import("@/components/Contact"), { ssr: false });
 const Footer = dynamic(() => import("@/components/Footer"), { ssr: false });
 
@@ -44,6 +45,7 @@ export default function Home() {
         <Calendar />
         <Donate />
         <GetInvolved />
+        <Projects />
         <Contact />
         <Footer />
       </div>
