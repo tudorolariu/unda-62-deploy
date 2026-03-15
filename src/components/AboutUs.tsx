@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { fadeIn } from "@/utils/fadeInEffect";
-import cineSuntemJPG from "@/assets/cineSuntem.webp";
+import cineSuntemWEBP from "@/assets/cineSuntem.webp";
 import Carousel from "@/components/Carousel";
 
 const AboutUs = () => {
@@ -58,7 +58,7 @@ const AboutUs = () => {
           >
             <Image
               alt="cine-suntem"
-              src={cineSuntemJPG}
+              src={cineSuntemWEBP}
               className="w-full rounded-xl"
             />
           </motion.div>
