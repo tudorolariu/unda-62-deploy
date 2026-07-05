@@ -5,6 +5,7 @@ import { useRef, useState, useEffect } from "react";
 
 import NavBar from "@/components/NavBar";
 import Hero from "@/components/Hero";
+import DonationsPage from "@/components/DonationsPage";
 
 const AboutUs = dynamic(() => import("@/components/AboutUs"), { ssr: false });
 const Calendar = dynamic(() => import("@/components/Calendar"), { ssr: false });
@@ -20,12 +21,24 @@ export default function Home() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [isOverflowYHidden, setIsOverflowYHidden] = useState(true);
 
+  //Donations Page Hash
+  const [hash, setHash] = useState("");
+
+  useEffect(() => {
+    setHash(window.location.hash);
+  }, []);
+
   //Always start at the top of the page on Refresh
   useEffect(() => {
     if (scrollRef.current) {
       scrollRef.current.scrollTo({ top: 0, left: 0, behavior: "auto" });
     }
   }, []);
+
+  //Link Donations Page to the ".../#/donations url"
+  if (hash === "#/donations") {
+    return <DonationsPage />;
+  }
 
   return (
     <div className="min-h-screen bg-cyan-dark flex justify-center">
